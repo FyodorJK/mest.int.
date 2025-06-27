@@ -32,7 +32,7 @@ arak_df_selected = pd.DataFrame({
 arak_df_selected["Átlagár"] = arak_df_selected[["Kenyér", "Tej", "Hús"]].mean(axis=1)
 
       
-df_jov = pd.read_csv("/content/drive/MyDrive/GDE_MII/Jovedelmek.csv", header=0)
+df_jov = pd.read_csv("", header=0)
 df_jov.columns = [
     "Év",
     "Bruttó átlagkereset",
@@ -98,8 +98,8 @@ plt.show()
 
 
 
-X = df_merged["Év"].values.reshape(-1, 1)  # Az évek mint független változó
-y = df_merged["Nettó átlagkereset"].values  # Nettó átlagkereset mint függő változó
+X = df_merged["Év"].values.reshape(-1, 1)
+y = df_merged["Nettó átlagkereset"].values
 
 poly = PolynomialFeatures(degree=2)
 X_poly = poly.fit_transform(X)
